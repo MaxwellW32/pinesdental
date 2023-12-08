@@ -94,6 +94,15 @@ section {
   color: rgb(var(--highlightColor))
 }
 
+.highlightPrimaryOnHover {
+  transition: color 600ms;
+}
+
+.highlightPrimaryOnHover:hover {
+  color: pink;
+  fill: pink
+}
+
 .floatToRight {
   position: absolute;
   top: 0;

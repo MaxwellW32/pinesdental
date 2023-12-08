@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ReusableNavBar, { menuItem } from '@/components/reusableNavBar/ReusableNavBar'
+import ReusableNavBar, { menuItem } from '@/resuables/navBar/ReusableNavBar'
 import AtomLoader from '@/utility/AtomLoader'
 import ThemeProvider from '@/utility/ThemeProvider'
 import OtherNavItems from '@/components/Layout/OtherNavItems'

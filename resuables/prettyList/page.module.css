@@ -1,0 +1,19 @@
+.ulMain {}
+
+.liMain {
+    color: #fff;
+}
+
+.liMain svg {
+    fill: #fff;
+}
+
+.liMain:hover {
+    cursor: pointer;
+    color: pink;
+}
+
+.liMain:hover svg {
+    /* fill: rgb(var(--whiteToBlackSwitch)); */
+    fill: pink;
+}

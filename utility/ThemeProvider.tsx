@@ -47,7 +47,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
         const newThemeObj: themeObj = {
             '--primaryColor': theme ? "98 156 252" : "98 156 252",
             '--secondaryColor': theme ? "37 45 55" : "37 45 55",
-            '--tertiaryColor': theme ? "0, 0, 0" : "0, 0, 0",
+            '--tertiaryColor': theme ? "100, 156, 252" : "100, 156, 252",
             '--backgroundColor': theme ? "255, 255, 255" : "30, 33, 37",
 
             '--blackWhiteSwitch': theme ? "0, 0, 0" : "255, 255, 255",
