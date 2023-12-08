@@ -38,16 +38,23 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
 
 
     const themeStyles = useMemo(() => {
+        type themeObj = {
+            [key: string]: string
+        }
+
         if (theme === undefined) return {}
 
-        const newThemeObj = {
-            '--primaryColor': theme ? "98 156 252" : "65 109 181",
-            '--secondaryColor': theme ? "37 45 55" : "67 79 83",
+        const newThemeObj: themeObj = {
+            '--primaryColor': theme ? "98 156 252" : "98 156 252",
+            '--secondaryColor': theme ? "37 45 55" : "37 45 55",
             '--tertiaryColor': theme ? "0, 0, 0" : "0, 0, 0",
-
             '--backgroundColor': theme ? "255, 255, 255" : "0, 0, 0",
 
+            '--blackWhiteSwitch': theme ? "0, 0, 0" : "255, 255, 255",
+            '--whiteBlackSwitch': theme ? "255, 255, 255" : "0, 0, 0",
+
             '--textColor': theme ? "0, 0, 0" : "255, 255, 255",
+
             '--highlightColor': theme ? "244 70 107" : "244 70 107",
         }
 
@@ -55,7 +62,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     }, [theme])
 
     return (
-        <div style={{ display: theme === undefined ? "none" : "", ...themeStyles }}>
+        <div id='rootDiv' style={{ display: theme === undefined ? "none" : "", ...themeStyles }}>
             {children}
         </div>
     )

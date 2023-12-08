@@ -23,6 +23,11 @@
 
 body {}
 
+#rootDiv {
+  color: rgb(var(--textColor));
+  background-color: rgb(var(--whiteBlackSwitch));
+}
+
 main {
   color: rgb(var(--textColor));
 }
@@ -34,6 +39,12 @@ main {
 svg {
   aspect-ratio: 1/1;
   width: var(--regularSvg);
+  transition: scale 400ms;
+  fill: rgb(var(--blackWhiteSwitch));
+}
+
+svg:hover {
+  scale: 1.1;
 }
 
 .giantText {

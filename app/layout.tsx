@@ -17,42 +17,42 @@ export const metadata: Metadata = {
 const menuInfoArr: menuItem[] = [
   {
     title: "Home",
-    link: "",
+    link: "/",
     subMenu: undefined
   },
   {
     title: "About Us",
-    link: "",
+    link: "/aboutUs",
     subMenu: [
       {
         title: "Gallery",
-        link: "",
+        link: "/gallery",
         subSubMenu: [
           {
             title: "Team",
-            link: ""
+            link: "/team"
           },
           {
             title: "Contact Us",
-            link: ""
+            link: "/contactUs"
           }
         ]
       },
       {
         title: "Services",
-        link: "",
+        link: "/services",
         subSubMenu: undefined
       },
       {
         title: "Documents",
-        link: "",
+        link: "/documents",
         subSubMenu: undefined
       }
     ]
   },
   {
     title: "Services",
-    link: "",
+    link: "/services",
     subMenu: [
       {
         title: "Consultations",
@@ -63,12 +63,12 @@ const menuInfoArr: menuItem[] = [
   },
   {
     title: "Blog",
-    link: "",
+    link: "/blog",
     subMenu: undefined
   },
   {
     title: "Contact Us",
-    link: "",
+    link: "/contactUs",
     subMenu: undefined
   },
 ]

@@ -1,7 +1,6 @@
 .mainNav {
     background-color: rgb(var(--secondaryColor));
     color: #fff;
-    fill: #fff;
     display: grid;
     padding: 0rem 1rem;
     position: sticky;
@@ -11,11 +10,13 @@
     align-items: center;
     text-transform: capitalize;
     z-index: 999;
+    font-weight: bold;
 }
 
 .mainNav svg {
     width: var(--regularSvg);
     aspect-ratio: 1/1;
+    fill: #fff;
 }
 
 .mainMenu {

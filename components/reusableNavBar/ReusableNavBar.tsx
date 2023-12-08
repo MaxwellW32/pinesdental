@@ -4,6 +4,7 @@ import styles from "./reusablenavbar.module.css"
 import { useAtom } from 'jotai'
 import Link from 'next/link'
 import { screenSizeGlobal, themeGlobal } from '@/utility/globalState'
+import { usePathname } from 'next/navigation'
 
 export type menuItem = {
     title: string,
@@ -63,14 +64,16 @@ export default function ReusableNavBar({ menuInfoArr }: { menuInfoArr: menuItem[
 function MenuItem({ seenMenuItem, seenSubMenuArr }: { seenMenuItem: menuItem, seenSubMenuArr: subMenuItem[] | undefined }) {
     const [screenSize,] = useAtom(screenSizeGlobal)
     const [showingSubMenu, showingSubMenuSet] = useState(false)
+    const pathname = usePathname()
+
 
 
     return (
         <li className={styles.mainMenuItem} onClick={(e) => { e.stopPropagation(); showingSubMenuSet(prev => !prev) }} >
-            <Link href={seenMenuItem.link}>{seenMenuItem.title}</Link>
+            <Link style={{ color: pathname === seenMenuItem.link ? "rgb(var(--primaryColor))" : "" }} href={seenMenuItem.link}>{seenMenuItem.title}</Link>
 
             {seenSubMenuArr !== undefined && (
-                <svg style={{ float: "right", width: "var(--smallSvg)", translate: ".5rem .5rem" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                <svg style={{ float: "right", width: "var(--smallSvg)", translate: ".5rem .5rem", fill: pathname === seenMenuItem.link ? "rgb(var(--primaryColor))" : "" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
             )}
 
             {(!screenSize.desktop ? showingSubMenu : true) && seenSubMenuArr !== undefined && (
@@ -85,13 +88,14 @@ function MenuItem({ seenMenuItem, seenSubMenuArr }: { seenMenuItem: menuItem, se
 function SubMenuItem({ seenSubMenuItem, seenSubSubMenuArr }: { seenSubMenuItem: subMenuItem, seenSubSubMenuArr: subSubMenuItem[] | undefined }) {
     const [screenSize,] = useAtom(screenSizeGlobal)
     const [showingSubSubMenu, showingSubSubMenuSet] = useState(false)
+    const pathname = usePathname()
 
     return (
         <li className={styles.subMenuItem} onClick={(e) => { e.stopPropagation(); showingSubSubMenuSet(prev => !prev) }}>
-            <Link href={seenSubMenuItem.link}>{seenSubMenuItem.title}</Link>
+            <Link style={{ color: pathname === seenSubMenuItem.link ? "rgb(var(--primaryColor))" : "" }} href={seenSubMenuItem.link}>{seenSubMenuItem.title}</Link>
 
             {seenSubSubMenuArr !== undefined && (
-                <svg style={{ float: "right", width: "var(--smallSvg)", translate: ".5rem .5rem" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
+                <svg style={{ float: "right", width: "var(--smallSvg)", translate: ".5rem .5rem", color: pathname === seenSubMenuItem.link ? "rgb(var(--primaryColor))" : "" }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
             )}
 
             {(!screenSize.desktop ? showingSubSubMenu : true) && seenSubSubMenuArr !== undefined && (
@@ -105,8 +109,9 @@ function SubMenuItem({ seenSubMenuItem, seenSubSubMenuArr }: { seenSubMenuItem: 
 
 function SubSubMenuItem({ seenSubSubMenuItem }: { seenSubSubMenuItem: subSubMenuItem }) {
     const [screenSize,] = useAtom(screenSizeGlobal)
+    const pathname = usePathname()
 
     return (
-        <li className={styles.subSubMenuItem}><Link href={seenSubSubMenuItem.link}>{seenSubSubMenuItem.title}</Link></li>
+        <li style={{ color: pathname === seenSubSubMenuItem.link ? "rgb(var(--primaryColor))" : "" }} className={styles.subSubMenuItem}><Link href={seenSubSubMenuItem.link}>{seenSubSubMenuItem.title}</Link></li>
     )
 }
