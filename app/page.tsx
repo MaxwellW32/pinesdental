@@ -28,21 +28,21 @@ export default function Home() {
             <h3 style={{ marginBlock: "1rem" }}>Alpha Health GP</h3>
 
             <CarouselSwipe items={[
-              <div>
+              <div key={1}>
                 <p>Alpha Health GP was founded in 2010, as a private medical practice. We offer multitude of primary health care solution to our patients.</p>
 
                 <br />
                 <p>We offer diverse and qualitative services to private and corporate customers across the board. Out professional team of primary health care personnel is well seasoned and experienced in providing top level medical support.</p>
               </div>,
 
-              <div>
+              <div key={2}>
                 <p>Alpha Health GP was founded in 2010, as a private medical practice. We offer multitude of primary health care solution to our patients.</p>
 
                 <br />
                 <p>We offer diverse and qualitative services to private and corporate customers across the board. Out professional team of primary health care personnel is well seasoned and experienced in providing top level medical support.</p>
               </div>,
 
-              <div>
+              <div key={3}>
                 <p>Alpha Health GP was founded in 2010, as a private medical practice. We offer multitude of primary health care solution to our patients.</p>
 
                 <br />
@@ -70,7 +70,6 @@ export default function Home() {
               { name: "GP Consultation", link: "/services/#GP Consultation" },
               { name: "Vaccinations", link: "" },
               { name: "Travel Medication", link: "/services/#Travel Medication" },
-              { name: "Sexual Health", link: "" },
               { name: "Family Doctor services" },
               { name: "Occupational" },
               { name: "Extra Services" },
