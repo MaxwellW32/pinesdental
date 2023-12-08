@@ -7,9 +7,9 @@ export const screenSizeGlobal = atom<{
     tablet: boolean,
     phone: boolean
 }>({
-    desktop: window.innerWidth > 1023 ? true : false,
-    tablet: window.innerWidth > 500 && window.innerWidth < 1024 ? true : false,
-    phone: window.innerWidth < 501 ? true : false
+    desktop: false,
+    tablet: false,
+    phone: false
 });
 
 export default function AtomLoader() {

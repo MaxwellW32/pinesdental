@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import styles from "./reusablenavbar.module.css"
 import { useAtom } from 'jotai'
 import { screenSizeGlobal } from '@/utility/AtomLoader'
@@ -22,16 +22,9 @@ export type subSubMenuItem = {
     link: string
 }
 
-//using js
-//one source of truth
-//can detect sizing myself
-//can stop event listeners when needed
-//can still use media queries for nice styles
-
-
 export default function ReusableNavBar({ menuInfoArr }: { menuInfoArr: menuItem[] }) {
     const [screenSize,] = useAtom(screenSizeGlobal)
-    const [showingMainMenu, showingMainMenuSet] = useState(screenSize.desktop ? true : false)
+    const [showingMainMenu, showingMainMenuSet] = useState(false)
 
     return (
         <nav className={styles.mainNav}>
