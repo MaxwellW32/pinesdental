@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ReusableNavBar, { menuItem } from '@/components/reusableNavBar/ReusableNavBar'
 import AtomLoader from '@/utility/AtomLoader'
+import ThemeProvider from '@/utility/ThemeProvider'
+import OtherNavItems from '@/components/Layout/OtherNavItems'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -76,9 +78,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AtomLoader />
-        <ReusableNavBar menuInfoArr={menuInfoArr} />
-        {children}
+        <ThemeProvider>
+          <AtomLoader />
+          <OtherNavItems />
+          <ReusableNavBar menuInfoArr={menuInfoArr} />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

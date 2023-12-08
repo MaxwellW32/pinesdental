@@ -3,19 +3,9 @@
 @tailwind utilities;
 
 :root {
-  /* colors */
-  --primaryColor: rgb(0, 0, 0);
-  --secondaryColor: rgb(0, 0, 0);
-  --tertiaryColor: rgb(0, 0, 0);
-  --backgroundColor: rgb(0, 0, 0);
-
-  --textColor: rgb(0, 0, 0);
-  --highlightColor: rgb(0, 0, 0);
-
   /* sizes */
-
   /* text */
-  --giantText: 4rem;
+  --giantText: 3rem;
   --largeText: 2rem;
   --mediumText: 1.3rem;
   --regularText: 1rem;
@@ -25,19 +15,30 @@
   --smallSvg: .7rem;
 }
 
-/* @media (prefers-color-scheme: dark) {
-check for this in js
-} */
-
 *,
 *::before,
 *::after {
   /* border: 1px solid red !important; */
 }
 
-body {
+body {}
+
+main {
   color: rgb(var(--textColor));
-  background: rgb(var(--backgroundColor))
+}
+
+.convert {
+  color: rgb(98, 156, 252)
+}
+
+svg {
+  aspect-ratio: 1/1;
+  width: var(--regularSvg);
+}
+
+.giantText {
+  font-size: var(--giantText);
+  text-align: center;
 }
 
 h1 {
@@ -55,8 +56,38 @@ h3 {
   font-weight: bold;
 }
 
+
+button {
+  padding: 1rem;
+  background-color: rgb(var(--primaryColor));
+  border-radius: 2rem;
+  font-weight: bold;
+  color: #fff
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+
+
+
+
+
+
 .makeBold {
   font-weight: bold;
+}
+
+.highlighted {
+  color: rgb(var(--highlightColor))
+}
+
+.floatToRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
 }
 
 .noScrollBar::-webkit-scrollbar {
@@ -78,5 +109,23 @@ h3 {
   background: rgb(var(--secondaryColor));
 }
 
+.smallTransitionRotation {
+  transition: rotate 600ms;
+}
+
 
 /* 1024px desktop    501px and 1023px tablet   500px phone*/
+
+@media only screen and (min-width: 1024px) {
+  /* desktop */
+
+}
+
+@media only screen and (min-width: 501px) and (max-width: 1023px) {
+  /* tablet */
+
+}
+
+@media only screen and (max-width: 500px) {
+  /* phone */
+}

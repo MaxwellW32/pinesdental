@@ -1,20 +1,14 @@
 "use client"
-import { atom, useAtom } from 'jotai'
-import { useLayoutEffect } from 'react';
 
-export const screenSizeGlobal = atom<{
-    desktop: boolean
-    tablet: boolean,
-    phone: boolean
-}>({
-    desktop: false,
-    tablet: false,
-    phone: false
-});
+import { useAtom } from "jotai"
+import { screenSizeGlobal } from "./globalState"
+import { useEffect } from "react"
+
 
 export default function AtomLoader() {
     const [screenSize, screenSizeSet] = useAtom(screenSizeGlobal)
 
+    //handle reizing
     const findScreenSize = () => {
         // const matchPhone = window.matchMedia("(max-width: 768px)")
         let localDesktop = false
@@ -69,8 +63,7 @@ export default function AtomLoader() {
             })
         }
     }
-
-    useLayoutEffect(() => {
+    useEffect(() => {
         findScreenSize()
         window.addEventListener("resize", findScreenSize)
 

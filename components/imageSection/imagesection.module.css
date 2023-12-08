@@ -1,0 +1,30 @@
+.sectionPart {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.imagePart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--filterColor);
+}
+
+.imagePart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
