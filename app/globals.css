@@ -3,25 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* colors */
+  --primaryColor: rgb(0, 0, 0);
+  --secondaryColor: rgb(0, 0, 0);
+  --tertiaryColor: rgb(0, 0, 0);
+  --backgroundColor: rgb(0, 0, 0);
+
+  --textColor: rgb(0, 0, 0);
+  --highlightColor: rgb(0, 0, 0);
+
+  /* sizes */
+
+  /* text */
+  --giantText: 4rem;
+  --largeText: 2rem;
+  --mediumText: 1.3rem;
+  --regularText: 1rem;
+
+  /* svg */
+  --regularSvg: 1rem;
+  --smallSvg: .7rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* @media (prefers-color-scheme: dark) {
+check for this in js
+} */
+
+*,
+*::before,
+*::after {
+  /* border: 1px solid red !important; */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--textColor));
+  background: rgb(var(--backgroundColor))
 }
+
+h1 {
+  font-size: var(--largeText);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: var(--mediumText);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: var(--regularText);
+  font-weight: bold;
+}
+
+.makeBold {
+  font-weight: bold;
+}
+
+.noScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.niceScrollBar::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  border-radius: 1rem;
+}
+
+.niceScrollBar::-webkit-scrollbar-thumb {
+  background: rgb(var(--primaryColor));
+  border-radius: 1rem;
+}
+
+.niceScrollBar::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--secondaryColor));
+}
+
+
+/* 1024px desktop    501px and 1023px tablet   500px phone*/
