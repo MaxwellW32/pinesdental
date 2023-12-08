@@ -13,7 +13,12 @@ export default function Home() {
         <button style={{ justifySelf: "center", width: "min(200px, 100%" }}>More about us</button>
       </ImageSection>
 
-      <section></section>
+      <section>
+        <h1 className='giantText' style={{ marginBottom: "2rem" }}>ABOUT THE CLINIC</h1>
+
+        <Image style={{ margin: "0 auto" }} alt='hall' src={require(`@/public/hall.jpg`).default.src} height={400} width={1300} />
+
+      </section>
       <section></section>
       <section></section>
     </main>

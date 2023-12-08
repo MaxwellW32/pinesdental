@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.sectionPart>*:not(.imagePart) {
+    z-index: 1;
+}
+
 .imagePart::before {
     content: "";
     position: absolute;
@@ -26,5 +30,4 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
 }
