@@ -2,6 +2,7 @@ import GridStack from '@/resuables/gridStack/GridStack'
 import Image from 'next/image'
 import React from 'react'
 import SocialMedia from '../social media logos/SocialMedia'
+import { getEmail, getOpeningHours, getPhone } from '@/useful functions/retrievePinesInfo'
 
 export default function Footer() {
     return (
@@ -15,14 +16,14 @@ export default function Footer() {
 
                 <div style={{ display: "grid", gap: ".5rem", justifyItems: "center" }}>
                     <h2 className="makeBold">Opening Hours</h2>
-                    <p>Mon–Fri: 9am–6pm</p>
-                    <p>Sat: 10am–4pm Sun: 10am–1pm</p>
+                    <p>{getOpeningHours(0)}</p>
+                    <p>{getOpeningHours(1)} {getOpeningHours(2)}</p>
                 </div>
 
                 <div style={{ display: "grid", gap: ".5rem", justifyItems: "center" }}>
                     <h2 className="makeBold">Contacts</h2>
-                    <p>{"+1 (876) 567 890"}</p>
-                    <p className='makeBold'>support@pinesdental.com</p>
+                    <p>{getPhone()}</p>
+                    <p className='makeBold'>{getEmail()}</p>
                 </div>
 
                 <div style={{ display: "grid", gap: ".5rem", justifyItems: "center" }}>
