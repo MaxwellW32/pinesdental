@@ -56,8 +56,8 @@ const menuInfoArr: menuItem[] = [
     link: "/services",
     subMenu: [
       {
-        title: "Consultations",
-        link: "",
+        title: "Consultation",
+        link: "/consultation",
         subSubMenu: undefined
       }
     ]
