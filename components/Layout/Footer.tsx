@@ -5,7 +5,7 @@ import SocialMedia from '../social media logos/SocialMedia'
 
 export default function Footer() {
     return (
-        <div style={{ padding: "2rem 1rem" }}>
+        <div style={{ padding: "2rem 1rem", borderTop: "2px solid rgb(var(--blackWhiteSwitch))" }}>
             <GridStack>
                 <div style={{ display: "grid", gap: ".5rem", justifyItems: "center" }}>
                     <Image alt="Pines Dental Logo" src={require(`@/public/logo actual.png`).default.src} width={150} height={150} />

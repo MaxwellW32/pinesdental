@@ -76,11 +76,11 @@ button {
   border-radius: 2rem;
   font-weight: bold;
   color: #fff;
-  transition: background-color 400ms;
+  transition: background-color 400ms, filter 400ms;
 }
 
 button:hover {
-  filter: brightness(.9);
+  filter: brightness(1.1);
 
 }
 
