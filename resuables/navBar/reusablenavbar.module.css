@@ -2,7 +2,7 @@
     background-color: rgb(var(--secondaryColor));
     color: #fff;
     display: grid;
-    padding: 0rem 1rem;
+    padding: var(--navHeight) 1rem;
     position: sticky;
     top: 0;
     grid-auto-flow: column;
@@ -131,10 +131,6 @@
         display: block;
     }
 
-    /* .mainMenuItem:hover>a {
-        color: blue;
-    } */
-
     .subMenu {
         display: block;
         position: relative;
@@ -150,10 +146,6 @@
         display: block;
     }
 
-    /* .subMenuItem:hover>a {
-        color: blue;
-    } */
-
     .subSubMenu {
         display: block;
         position: relative;
@@ -165,8 +157,4 @@
     .subSubMenuItem {
         padding: 1rem;
     }
-
-    /* .subSubMenuItem:hover>a {
-        color: blue;
-    } */
 }

@@ -5,6 +5,7 @@ import ReusableNavBar, { menuItem } from '@/resuables/navBar/ReusableNavBar'
 import AtomLoader from '@/utility/AtomLoader'
 import ThemeProvider from '@/utility/ThemeProvider'
 import OtherNavItems from '@/components/Layout/OtherNavItems'
+import Footer from '@/components/Layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <OtherNavItems />
           <ReusableNavBar menuInfoArr={menuInfoArr} />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

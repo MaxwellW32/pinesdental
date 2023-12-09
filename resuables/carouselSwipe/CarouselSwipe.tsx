@@ -1,18 +1,17 @@
 "use client"
 
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
 
-export default function CarouselSwipe({ items, width = "min(350px, 100%)", height, }: { items: JSX.Element[], width?: string, height?: string }) {
+export default function CarouselSwipe({ items, width = "350px", transitionTimeVal = 1000, carouselStyles, carouselContStyles, bttnContStyles }: { items: JSX.Element[], width?: string, height?: string, transitionTimeVal?: number, carouselStyles?: CSSProperties, carouselContStyles?: CSSProperties, bttnContStyles?: CSSProperties }) {
 
-    const [seenItems, seenItemsset] = useState(items)
-    const [userInteracted, userInteractedset] = useState(items)
+    const [seenItems] = useState(items)
 
     const [currentIndex, currentIndexset] = useState(0)
     const [translateVal, translateValset] = useState(0)
 
     const [canClick, canClickSet] = useState(true)
 
-    const transitionTimeInitialValue = useRef(1000)
+    const transitionTimeInitialValue = useRef(transitionTimeVal)
     const [transitionTime, transitionTimeset] = useState(transitionTimeInitialValue.current)
 
     const onLast = useMemo(() => {
@@ -87,7 +86,7 @@ export default function CarouselSwipe({ items, width = "min(350px, 100%)", heigh
         if (translateVal === 0) {
             setTimeout(() => {
                 transitionTimeset(transitionTimeInitialValue.current)
-            }, 10)
+            }, 20)
         }
     }, [translateVal])
 
@@ -133,32 +132,38 @@ export default function CarouselSwipe({ items, width = "min(350px, 100%)", heigh
 
     return (
         <div>
-            <div style={{ width: width, height: height, position: "relative", overflow: "hidden" }}>
+            <div style={{ margin: "0 auto", width: `min(${width}, 100%)`, position: "relative", overflow: "hidden", ...carouselContStyles }}>
+                {/* set sizing */}
+                <div style={{ padding: "1rem", ...carouselStyles, userSelect: "none", opacity: 0, pointerEvents: "none" }}>
+                    {items[0]}
+                </div>
+
                 {/* a */}
-                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal - 100}% 0%`, transition: `translate ${transitionTime}ms` }}>
+                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal - 100}% 0%`, transition: `translate ${transitionTime}ms`, padding: "1rem", ...carouselStyles }}>
                     {onFirst ? items[items.length - 1] : items[currentIndex - 1]}
                 </div>
 
                 {/* b */}
-                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal}% 0%`, transition: `translate ${transitionTime}ms` }}>
+                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal}% 0%`, transition: `translate ${transitionTime}ms`, padding: "1rem", ...carouselStyles }}>
                     {items[currentIndex]}
                 </div>
 
                 {/* c */}
-                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal + 100}% 0%`, transition: `translate ${transitionTime}ms` }}>
+                <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, translate: `${translateVal + 100}% 0%`, transition: `translate ${transitionTime}ms`, padding: "1rem", ...carouselStyles }}>
                     {onLast ? items[0] : items[currentIndex + 1]}
                 </div>
             </div>
 
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <p onClick={() => {
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", ...bttnContStyles }}>
+                <svg onClick={() => {
                     handleUserClicked()
                     movePrev()
-                }}>prev</p>
-                <p onClick={() => {
+                }} xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z" /></svg>
+
+                <svg onClick={() => {
                     handleUserClicked()
                     moveNext()
-                }}>next</p>
+                }} xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z" /></svg>
             </div>
         </div>
     )

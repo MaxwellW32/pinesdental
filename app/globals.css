@@ -11,6 +11,7 @@
   --regularText: 1rem;
 
   /* svg */
+  --largeSvg: 3rem;
   --regularSvg: 1rem;
   --smallSvg: .7rem;
 }
@@ -50,6 +51,7 @@ svg:hover {
 .giantText {
   font-size: var(--giantText);
   text-align: center;
+  margin-block: 1rem;
 }
 
 h1 {
@@ -69,11 +71,30 @@ h3 {
 
 
 button {
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: rgb(var(--primaryColor));
   border-radius: 2rem;
   font-weight: bold;
-  color: #fff
+  color: #fff;
+  transition: background-color 400ms;
+}
+
+button:hover {
+  filter: brightness(.9);
+
+}
+
+.bttn1 {
+  background-color: rgb(var(--backgroundColor));
+  border: 2px solid rgb(var(--primaryColor));
+  color: rgb(var(--primaryColor));
+}
+
+.bttn1:hover {
+  filter: none;
+  background-color: rgb(var(--primaryColor));
+  border: 2px solid rgb(var(--backgroundColor));
+  color: #fff;
 }
 
 section {
@@ -81,9 +102,31 @@ section {
 }
 
 
+input {
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(var(--whiteBlackSwitch));
+  font-weight: bold;
+}
 
+input:focus {
+  outline: 2px solid rgb(var(--whiteBlackSwitch));
+  ;
+}
 
+input::placeholder {
+  font-weight: bold;
+  color: rgb(var(--whiteBlackSwitch));
+}
 
+.closeSvg {
+  transition: fill 400ms;
+}
+
+.closeSvg:hover {
+  fill: rgb(var(--highlightColor)) !important;
+}
 
 
 .makeBold {
@@ -92,15 +135,6 @@ section {
 
 .highlighted {
   color: rgb(var(--highlightColor))
-}
-
-.highlightPrimaryOnHover {
-  transition: color 600ms;
-}
-
-.highlightPrimaryOnHover:hover {
-  color: pink;
-  fill: pink
 }
 
 .floatToRight {
