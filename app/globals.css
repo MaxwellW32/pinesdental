@@ -96,6 +96,26 @@ button:hover {
   color: #fff;
 }
 
+.bttn2 {
+  background-color: rgb(var(--primaryColor));
+  border: 2px solid rgb(var(--backgroundColor));
+  color: rgb(var(--backgroundColor));
+}
+
+.bttn2:hover {
+  filter: none;
+  background-color: rgb(var(--backgroundColor));
+  border: 2px solid rgb(var(--primaryColor));
+}
+
+.bttn2>svg {
+  fill: #fff;
+}
+
+.bttn2:hover>svg {
+  fill: #000;
+}
+
 section {
   padding: 2rem 1rem;
 }

@@ -1,5 +1,5 @@
 "use client"
-import { useState, useLayoutEffect, CSSProperties } from 'react'
+import { useState, CSSProperties } from 'react'
 import styles from "./reusablenavbar.module.css"
 import { useAtom } from 'jotai'
 import Link from 'next/link'
