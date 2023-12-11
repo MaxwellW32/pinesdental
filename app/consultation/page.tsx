@@ -41,7 +41,7 @@ export default function page() {
                             <p>If necessary, seamless referrals to specialist practitioners at no extra cost.</p>
 
                             <h3 style={{ margin: "1.5rem 0 .5rem 0" }}>Schedule Your Dental Consultation:</h3>
-                            <p>Feel free to contact us for any dental concerns or to book an appointment with our dental team. For more information on how to get in touch, please visit our "Contact Us" page.</p>
+                            <p>Feel free to contact us for any dental concerns or to book an appointment with our dental team. For more information on how to get in touch, please visit our &quot;Contact Us&quot; page.</p>
 
                             <div>
                                 <TwoColumn
