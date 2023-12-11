@@ -1,0 +1,47 @@
+.consultationsDiv {
+    color: rgb(var(--whiteBlackSwitch));
+}
+
+.consultationsDiv>p::before {
+    content: "";
+    width: .5rem;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    background-color: rgb(var(--primaryColor));
+    filter: brightness(1.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: -1rem .5rem;
+}
+
+.consultationsDiv>p {
+    gap: .5rem;
+    margin-block: 1rem;
+    transition: color 200ms;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.consultationsDiv>p:hover {
+    color: rgb(var(--secondaryColor));
+}
+
+
+
+
+
+
+
+.overViewDiv>p {
+    margin-block: 1rem;
+    opacity: .8;
+}
+
+
+
+
+.buttonCont>p {
+    max-width: 450px;
+}

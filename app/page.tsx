@@ -9,6 +9,7 @@ import AskQuestions from '@/components/askQuestions/AskQuestions'
 import { getAddress, getEmail, getOpeningHours, getPhone } from '@/useful functions/retrievePinesInfo'
 import BackToTopBttn from '@/components/home/BackToTopBttn'
 import AddressMap from '@/components/addressMap/AddressMap'
+import PatientOpinions from '@/components/patientOpinions/PatientOpinions'
 
 export default function Home() {
   //make a grid stack component
@@ -90,20 +91,7 @@ export default function Home() {
       <section>
         <h1 className='giantText'>WHAT OUR PATIENTS SAY</h1>
 
-        <CarouselSwipe carouselContStyles={{}} bttnContStyles={{ justifyContent: "center" }} width='1000px' items={[
-          <DisplayClientFeedback key={1} info={{
-            name: "Albert Payne",
-            opinion: "Just a quick note to say thank you so much for the care youtook over my appointment today. I am very grateful for your high standard of care and professionalism."
-          }} />,
-          <DisplayClientFeedback key={2} info={{
-            name: "Sarah Connor",
-            opinion: "Thank you so much for fitting us in today, don't know what we'd have done without you. My daughter is quite timid, but your doctor was brilliant with her."
-          }} />,
-          <DisplayClientFeedback key={3} info={{
-            name: "Melecia Willis",
-            opinion: "Great Services"
-          }} />
-        ]} />
+        <PatientOpinions />
 
         <button className='bttn1' style={{ margin: "0 auto", display: "block", marginBlock: "2rem" }}>All Testimonials</button>
       </section>
