@@ -19,7 +19,7 @@ export default function page() {
 
                         <h2 style={{ margin: "1.5rem 0 .5rem 0" }}>Professional biography</h2>
 
-                        <p>Franic Christensen, MD is CMO (Chief Medical Officer) and a managing CEO for Alpha Health company. Since it's founding in 2010, this medical private facility offers combined decades of medical experience of it's staff and builds it on.</p>
+                        <p>Franic Christensen, MD is CMO (Chief Medical Officer) and a managing CEO for Alpha Health company. Since it&apos;s founding in 2010, this medical private facility offers combined decades of medical experience of it&apos;s staff and builds it on.</p>
                     </div>
 
                     <div style={{ flex: "1 1 300px" }}>
@@ -27,7 +27,7 @@ export default function page() {
                     </div>
 
                     <div style={{ padding: "0 1rem", flex: "1 1 300px", display: "grid", gap: "1.5rem", alignContent: "flex-start" }}>
-                        <p>Dr.Francis Christensen is St.Luke's Hospital Med School graduate (year of graduation - 1980). Shortly after defending his medical degree Dr. Christensen did a field work in his native state of Pennsylvania, gaining practical experience and post-graduate additional traning.</p>
+                        <p>Dr.Francis Christensen is St.Luke&apos;s Hospital Med School graduate (year of graduation - 1980). Shortly after defending his medical degree Dr. Christensen did a field work in his native state of Pennsylvania, gaining practical experience and post-graduate additional traning.</p>
 
                         <p>Also he spent some time professionally in Europe and Australia where he was Chief Medical before founding his General Practice back in Pennsylvania.</p>
 
