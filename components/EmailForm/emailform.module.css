@@ -1,0 +1,14 @@
+.formDiv>div {
+    display: grid;
+    gap: .5rem;
+    margin-block: 1rem;
+}
+
+.formDiv>div>input {
+    padding-block: .5rem;
+    color: rgb(var(--whiteBlackSwitch));
+}
+
+.formDiv>div>input::placeholder {
+    opacity: .7;
+}

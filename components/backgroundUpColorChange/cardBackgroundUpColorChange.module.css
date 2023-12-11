@@ -1,0 +1,21 @@
+ .RUBackdropElement {
+     translate: 0 100%;
+     transition: translate var(--RUTransitionTime);
+ }
+
+ .RUBackdropElement+* {
+     color: var(--RUPrimaryColor);
+     transition: color var(--RUTransitionTime);
+     position: relative;
+     z-index: 1;
+ }
+
+ .mainEl:hover>* {
+     color: var(--RUSecondaryColor);
+ }
+
+ .mainEl:hover>.RUBackdropElement {
+     color: var(--RUSecondaryColor);
+     translate: 0 0;
+
+ }
