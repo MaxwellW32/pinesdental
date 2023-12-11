@@ -62,7 +62,7 @@ export default function page() {
                         },
                     ].map((each, eachIndex) => {
                         return (
-                            <div style={{ flex: "0 1 200px" }}>
+                            <div key={eachIndex} style={{ flex: "0 1 200px" }}>
                                 <Image alt='certificate' src={each.src} width={400} height={400} style={{ width: "100%", objectFit: "cover" }} />
                                 <p style={{ textAlign: "center" }} className='makeBold'>Certificate</p>
                             </div>
