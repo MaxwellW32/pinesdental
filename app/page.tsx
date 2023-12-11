@@ -8,6 +8,7 @@ import DisplayClientFeedback from '@/components/home/displayClientFeedback/Displ
 import AskQuestions from '@/components/askQuestions/AskQuestions'
 import { getAddress, getEmail, getOpeningHours, getPhone } from '@/useful functions/retrievePinesInfo'
 import BackToTopBttn from '@/components/home/BackToTopBttn'
+import AddressMap from '@/components/addressMap/AddressMap'
 
 export default function Home() {
   //make a grid stack component
@@ -30,7 +31,7 @@ export default function Home() {
 
         <GridStack gridStyles={{ padding: "1rem", alignItems: "center" }}>
           <div>
-            <h3 style={{ marginBlock: "1rem" }}>Alpha Health GP</h3>
+            <h3 style={{ marginBlock: "1rem" }}>Pines Dental</h3>
 
             <CarouselSwipe width='500px' items={[
               <div key={1}>
@@ -158,8 +159,7 @@ export default function Home() {
       </section>
 
       <section>
-        <iframe style={{ overflow: "hidden" }} width="100%" height="600" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=17.9648861,-76.896885,+(Pines%20Dental)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Population mapping</a>
-        </iframe>
+        <AddressMap />
       </section>
 
       <BackToTopBttn />

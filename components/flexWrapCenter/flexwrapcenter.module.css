@@ -1,0 +1,5 @@
+.mainEl>* {
+    width: var(--RUChildElementWidth);
+    height: var(--RUChildElementWidth);
+
+}

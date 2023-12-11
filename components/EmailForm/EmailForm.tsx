@@ -6,7 +6,7 @@ import Z from "zod"
 import emailjs from "@emailjs/browser";
 import { userForm, userFormSchema } from '@/types'
 
-export default function EmailForm() {
+export default function EmailForm({ mainHeader = "Contact US" }: { mainHeader?: string }) {
 
     const initialForm: userForm = {
         name: "",
@@ -144,7 +144,7 @@ export default function EmailForm() {
 
     return (
         <form method='POST' onSubmit={handleSubmit} className={styles.formDiv} style={{ backgroundColor: "rgb(var(--primaryColor))", padding: "2rem", display: "flex", flexDirection: "column" }}>
-            <h1 style={{ color: "rgb(var(--whiteBlackSwitch))", textAlign: "center" }}>Contact US</h1>
+            <h1 style={{ color: "rgb(var(--whiteBlackSwitch))", textAlign: "center" }}>{mainHeader}</h1>
 
             <div>
                 <label htmlFor='sentName'>name</label>

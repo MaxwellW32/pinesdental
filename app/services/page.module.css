@@ -1,0 +1,26 @@
+.serviceBox {}
+
+.serviceBox>div {
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.serviceBox>div>ul {
+    padding: .5rem 0;
+}
+
+.serviceBox>div>ul>li {
+    margin-block: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.serviceBox li::before {
+    content: "";
+    width: .2rem;
+    display: inline-block;
+    aspect-ratio: 1/1;
+    background-color: rgb(var(--primaryColor));
+    position: relative;
+}

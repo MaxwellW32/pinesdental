@@ -48,13 +48,13 @@ export const FillInData = [
         name: "Dr. Olivia Gums"
     },
     {
-        src: "https://template58686.motopreview.com/mt-demo/58600/58686/mt-content/uploads/2016/04/mt-0394-team-img11-1.jpg",
+        src: "https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         alt: "Dentist 9",
         title: "Dental Assistant",
         name: "Sam SmilesHelper"
     },
     {
-        src: "https://template58686.motopreview.com/mt-demo/58600/58686/mt-content/uploads/2016/04/mt-0394-team-img11-1.jpg",
+        src: "https://images.pexels.com/photos/3845548/pexels-photo-3845548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         alt: "Dentist 10",
         title: "Dental Lab Technician",
         name: "Lily LabTech"
