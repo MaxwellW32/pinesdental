@@ -1,8 +1,10 @@
-import React from 'react'
-import styles from "./page.module.css"
+import { getAllPostsForHome } from "@/components/wordpress/lib/api"
 
-export default function page() {
+
+export default async function page({ preview = false }: { preview: boolean }) {
+    const allPosts = await getAllPostsForHome(preview)
+
     return (
-        <div>page</div>
+        <div>{JSON.stringify(allPosts)}</div>
     )
 }

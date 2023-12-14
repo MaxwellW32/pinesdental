@@ -6,6 +6,8 @@ import AtomLoader from '@/utility/AtomLoader'
 import ThemeProvider from '@/utility/ThemeProvider'
 import OtherNavItems from '@/components/Layout/OtherNavItems'
 import Footer from '@/components/Layout/Footer'
+import { navMenuInfoArr } from '@/utility/globalState'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,75 +16,19 @@ export const metadata: Metadata = {
   description: 'Your one true dentist',
 }
 
-
-const menuInfoArr: menuItem[] = [
-  {
-    title: "Home",
-    link: "/",
-    subMenu: undefined
-  },
-  {
-    title: "About Us",
-    link: "/aboutUs",
-    subMenu: [
-      {
-        title: "Gallery",
-        link: "/gallery",
-        subSubMenu: [
-          {
-            title: "Team",
-            link: "/team"
-          },
-          {
-            title: "Contact Us",
-            link: "/contactUs"
-          }
-        ]
-      },
-      {
-        title: "Services",
-        link: "/services",
-        subSubMenu: undefined
-      },
-      {
-        title: "Documents",
-        link: "/documents",
-        subSubMenu: undefined
-      }
-    ]
-  },
-  {
-    title: "Services",
-    link: "/services",
-    subMenu: [
-      {
-        title: "Consultation",
-        link: "/consultation",
-        subSubMenu: undefined
-      }
-    ]
-  },
-  {
-    title: "Blog",
-    link: "/blog",
-    subMenu: undefined
-  },
-  {
-    title: "Contact Us",
-    link: "/contactUs",
-    subMenu: undefined
-  },
-]
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
           <AtomLoader />
           <OtherNavItems />
-          <ReusableNavBar menuInfoArr={menuInfoArr} />
+          <ReusableNavBar menuInfoArr={navMenuInfoArr} />
           {children}
           <Footer />
         </ThemeProvider>
