@@ -74,3 +74,6 @@ export const navMenuInfoArr: menuItem[] = [
         subMenu: undefined
     },
 ]
+
+
+export const wordpressLink = `http://localhost/mywordpress`
