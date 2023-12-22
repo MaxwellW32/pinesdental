@@ -1,0 +1,66 @@
+.carousel>:first-child {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* left el */
+.carousel> :nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+}
+
+/* middle el */
+.carousel>:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0%);
+    width: 100%;
+    height: 100%;
+}
+
+/* right el */
+.carousel>:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+}
+
+.animate {
+    animation: swipe var(--transitionTime) both;
+}
+
+.animateFast {
+    animation: swipe 400ms both;
+}
+
+@keyframes swipe {
+    0% {
+        translate: 0 0;
+    }
+
+    100% {
+        translate: -100% 0;
+    }
+}
+
+
+
+
+.bttnCont>div {
+    cursor: pointer;
+}

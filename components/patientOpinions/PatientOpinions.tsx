@@ -4,7 +4,7 @@ import DisplayClientFeedback from '../home/displayClientFeedback/DisplayClientFe
 
 export default function PatientOpinions() {
     return (
-        <CarouselSwipe carouselContStyles={{}} bttnContStyles={{ justifyContent: "center" }} width='1000px' items={[
+        <CarouselSwipe elementArr={[
             <DisplayClientFeedback key={1} info={{
                 name: "Albert Payne",
                 opinion: "Just a quick note to say thank you so much for the care youtook over my appointment today. I am very grateful for your high standard of care and professionalism."

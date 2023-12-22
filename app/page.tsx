@@ -1,4 +1,3 @@
-import CarouselSwipe from '@/resuables/carouselSwipe/CarouselSwipe'
 import GridStack from '@/resuables/gridStack/GridStack'
 import ImageSection from '@/components/imageSection/ImageSection'
 import Image from 'next/image'
@@ -10,10 +9,22 @@ import { getAddress, getEmail, getOpeningHours, getPhone } from '@/useful functi
 import BackToTopBttn from '@/components/home/BackToTopBttn'
 import AddressMap from '@/components/addressMap/AddressMap'
 import PatientOpinions from '@/components/patientOpinions/PatientOpinions'
+import CarouselSwipe from '@/resuables/carouselSwipe/CarouselSwipe'
+
+function FakeEl({ height, width, amount }: { height: string, width: string, amount: number }) {
+
+  return (
+    <>
+      {new Array(amount).fill("").map((eachArr, eachArrIndex) => {
+        return (
+          <div key={eachArrIndex} style={{ height: height, width: width, backgroundColor: "orange" }}>{eachArrIndex + 1} el</div>
+        )
+      })}
+    </>
+  )
+}
 
 export default function Home() {
-  //make a grid stack component
-  //make a carousel component
 
   return (
     <main>
@@ -34,7 +45,7 @@ export default function Home() {
           <div>
             <h3 style={{ marginBlock: "1rem" }}>Pines Dental</h3>
 
-            <CarouselSwipe width='500px' items={[
+            <CarouselSwipe elementArr={[
               <div key={1}>
                 <p>Alpha Health GP was founded in 2010, as a private medical practice. We offer multitude of primary health care solution to our patients.</p>
 
